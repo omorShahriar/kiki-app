@@ -23,23 +23,25 @@ export default async function Home({ params: { lng } }) {
         <div className="">
           <Slider slides={hero_slider.slides} />
         </div>
-        <section className="mb-40 mt-32 min-h-[100px]">
-          <MarqueeContainer>
-            {newsLinks.map((news) => (
-              <p
-                key={news.id}
-                className="px-12 border-r py-8  md:text-6xl text-3xl font-bold  overflow-hidden"
+      </Container>
+      <section className="mb-40 mt-32 min-h-[100px]">
+        <MarqueeContainer>
+          {newsLinks.map((news) => (
+            <p
+              key={news.id}
+              className="px-12 border-r py-8  md:text-6xl text-3xl font-bold  overflow-hidden"
+            >
+              <Link
+                href={news.href}
+                className="hover:text-blue-700 transition-colors duration-200 "
               >
-                <Link
-                  href={news.href}
-                  className="hover:text-blue-700 transition-colors duration-200 "
-                >
-                  {news.label}
-                </Link>
-              </p>
-            ))}
-          </MarqueeContainer>
-        </section>
+                {news.label}
+              </Link>
+            </p>
+          ))}
+        </MarqueeContainer>
+      </section>
+      <Container>
         <section className="my-20">
           <PrimaryHeading>{t("recent-articles")}</PrimaryHeading>
           <RecentArticles lang={lng} />

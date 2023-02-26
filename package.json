@@ -27,6 +27,7 @@
     "react-icons": "^4.7.1",
     "react-markdown": "^8.0.5",
     "react-multi-carousel": "^2.8.2",
+    "sharp": "^0.31.3",
     "swiper": "^9.0.5",
     "swr": "^2.0.4"
   },

@@ -3,8 +3,6 @@ import Header from "@/components/Header";
 import Products from "@/components/ProductRelated/Products";
 import { getProducts } from "@/lib/api";
 
-export const revalidate = 300;
-
 const page = async ({ params: { lng } }) => {
   const products = await getProducts({ page: 1 });
 

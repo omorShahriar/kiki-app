@@ -10,8 +10,6 @@ import RecentProducts from "@/components/ProductRelated/RecentProducts";
 import ViewAll from "@/components/ViewAll";
 import MarqueeContainer from "@/components/MarqueeContainer";
 
-export const revalidate = 60;
-
 export default async function Home({ params: { lng } }) {
   const { t } = await useTranslation(lng);
   const { hero_slider } = await getHomePageData(lng);

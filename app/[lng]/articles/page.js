@@ -4,8 +4,6 @@ import Container from "@/components/Container";
 import Header from "@/components/Header";
 import { getArticles } from "@/lib/api";
 
-export const revalidate = 300;
-
 const page = async ({ params: { lng } }) => {
   const articles = await getArticles({ page: 1 });
 

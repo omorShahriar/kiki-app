@@ -6,6 +6,7 @@ const nextConfig = {
   images: {
     domains: ["localhost", "behind.kikiami.de"],
   },
+  output: "standalone",
 };
 
 module.exports = nextConfig;

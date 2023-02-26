@@ -73,7 +73,7 @@ const Footer = async ({ lang }) => {
         <div className="mt-12">
           <p className="text-center ">
             {" "}
-            &copy; {new Date().getFullYear()} Black-Panda.{" "}
+            &copy; {new Date().getFullYear()} Kiki & Ami.{" "}
             {t("all-rights-reserved")}
           </p>
         </div>

@@ -4,7 +4,7 @@ const nextConfig = {
     appDir: true,
   },
   images: {
-    domains: ["localhost", "behind.theblackpanda.de"],
+    domains: ["localhost", "behind.kikiami.de"],
   },
 };
 

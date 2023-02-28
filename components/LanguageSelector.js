@@ -45,7 +45,7 @@ export default function LanguageSelector({ lang }) {
             leaveFrom="opacity-100"
             leaveTo="opacity-0"
           >
-            <Listbox.Options className="flex items-center flex-col gap-y-4 bg-white dark:bg-zinc-900  py-2 absolute mt-1 max-h-60 w-full overflow-auto rounded-md border border-theme-blue-deep dark:border-zinc-700  text-base focus:outline-none sm:text-sm">
+            <Listbox.Options className="z-50 flex items-center flex-col gap-y-4 bg-theme-purple-light dark:bg-zinc-900  py-2 absolute mt-1 max-h-60 w-full overflow-auto rounded-md border border-theme-blue-deep dark:border-zinc-700  text-base focus:outline-none sm:text-sm">
               {languageFlags.map((language, personIdx) => (
                 <Listbox.Option
                   key={personIdx}

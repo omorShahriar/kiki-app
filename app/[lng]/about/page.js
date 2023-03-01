@@ -7,7 +7,7 @@ const About = async ({ params: { lng } }) => {
 
   return (
     <Container>
-      <div className=" prose lg:prose-xl dark:prose-dark max-w-none">
+      <div className=" prose lg:prose-xl dark:prose-dark max-w-none mb-20">
         <MarkDown content={blockData.content} />
       </div>
     </Container>

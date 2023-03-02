@@ -26,7 +26,7 @@ const Slider = ({ slides }) => {
         return (
           <SwiperSlide key={slide.title}>
             <Link href={slide.url ? slide.url : "#"}>
-              <div className="mt-4 relative  ">
+              <div className="m-2 relative  ">
                 <p className="md:text-3xl text-xl font-bold capitalize bg-gray-900/60 md:p-4 p-3 text-white absolute bottom-8 left-8 ">
                   {slide.title}
                 </p>
@@ -36,7 +36,7 @@ const Slider = ({ slides }) => {
                   height={height}
                   alt={slide.title}
                   priority
-                  className="rounded-md w-full max-h-96 object-cover object-center  "
+                  className="rounded-md w-full max-h-[calc(100vh-172.65px-16px)]  object-cover object-center  "
                 />
               </div>
             </Link>

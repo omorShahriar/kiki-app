@@ -6,6 +6,7 @@ import ThemeToggle from "@/components/ThemeToggle";
 import Image from "next/image";
 import MobileMenu from "./MobileMenu";
 import LanguageSelector from "./LanguageSelector";
+import Link from "next/link";
 
 const Navigation = async ({ lang }) => {
   const navElementsData = await getNavigationData(lang);
@@ -15,12 +16,15 @@ const Navigation = async ({ lang }) => {
       <Container>
         <div className="flex justify-between items-center  ">
           <div className="logo rounded-md overflow-hidden ">
-            <Image
-              src="/logo.png"
-              width={100}
-              height={60}
-              alt="kiki and ami logo"
-            />
+            <Link href="/">
+              {" "}
+              <Image
+                src="/logo.png"
+                width={100}
+                height={60}
+                alt="kiki and ami logo"
+              />
+            </Link>
           </div>
           <ul className="hidden md:flex gap-x-4">
             <MainMenu navElements={navElementsData} />

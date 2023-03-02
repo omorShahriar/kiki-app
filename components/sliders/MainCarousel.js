@@ -26,7 +26,7 @@ const Slider = ({ slides }) => {
         return (
           <SwiperSlide key={slide.title}>
             <Link href={slide.url ? slide.url : "#"}>
-              <div className="m-2 relative  ">
+              <div className="m-2 mt-14 md:mt-2 relative  ">
                 <p className="md:text-3xl text-xl font-bold capitalize bg-gray-900/60 md:p-4 p-3 text-white absolute bottom-8 left-8 ">
                   {slide.title}
                 </p>

@@ -21,16 +21,16 @@ export default async function Home({ params: { lng } }) {
         <Slider slides={hero_slider.slides} />
       </div>
 
-      <section className="mb-40 mt-32 min-h-[100px]">
+      <section className="mt-16 mb-20 md:mb-40 md:mt-32 min-h-[100px] ">
         <MarqueeContainer>
           {newsLinks.map((news) => (
             <p
               key={news.id}
-              className="px-12 border-r py-8  md:text-6xl text-3xl font-bold  overflow-hidden"
+              className="px-12 border-theme-purple-deep dark:border-theme-purple-light border-t-4 border-b-4 border-r-4 py-8  md:text-6xl text-3xl font-bold  overflow-hidden"
             >
               <Link
                 href={news.href}
-                className="hover:text-blue-700 transition-colors duration-200 "
+                className="hover:text-theme-purple-deep transition-colors duration-200 "
               >
                 {news.label}
               </Link>

@@ -17,9 +17,12 @@ export default async function Home({ params: { lng } }) {
 
   return (
     <>
-      <div className="">
-        <Slider slides={hero_slider.slides} />
-      </div>
+      <Container>
+        {" "}
+        <div className="px-2">
+          <Slider slides={hero_slider.slides} />
+        </div>
+      </Container>
 
       <section className="mt-16 mb-20 md:mb-40 md:mt-32 min-h-[100px] ">
         <MarqueeContainer>
@@ -40,7 +43,7 @@ export default async function Home({ params: { lng } }) {
       </section>
       <Container>
         <section className="my-20">
-          <PrimaryHeading>{t("recent-articles")}</PrimaryHeading>
+          <PrimaryHeading>{t("recent-articles")}</PrimaryHeading>{" "}
           <RecentArticles lang={lng} />
           <div className="mt-12 flex justify-end  ">
             <ViewAll lang={lng} page="articles" />
@@ -50,12 +53,7 @@ export default async function Home({ params: { lng } }) {
           <PrimaryHeading>{t("recent-products")}</PrimaryHeading>
           <RecentProducts lang={lng} />
           <div className="mt-12 flex justify-end">
-            <Link
-              className="font-sans font-bold text-theme-purple-deep text-2xl"
-              href={`/${lng}/products`}
-            >
-              {t("to-all")}
-            </Link>
+            <ViewAll lang={lng} page="products" />
           </div>
         </section>
       </Container>

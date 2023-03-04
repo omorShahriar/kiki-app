@@ -7,9 +7,9 @@ const JosefinSans = Josefin_Sans({
   variable: "--font-josefin-sans",
 });
 
-// export async function generateStaticParams() {
-//   return languages.map((lng) => ({ lng }));
-// }
+export async function generateStaticParams() {
+  return languages.map((lng) => ({ lng }));
+}
 
 import SearchBar from "@/components/SearchBar";
 import "./globals.css";

@@ -22,7 +22,7 @@ module.exports = {
               color: theme("colors.gray.100"),
             },
             h3: {
-              color: theme("colors.gray.100"),
+              color: theme("colors.purple.100"),
             },
             th: {
               color: theme("colors.gray.100"),

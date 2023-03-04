@@ -22,8 +22,8 @@ const Card = ({ lang = "en", info, cardType }) => {
           <Image
             alt={info.title}
             src={imageUrl}
-            width={800}
-            height={500}
+            width={400}
+            height={250}
             className=" w-full h-60  object-cover object-center hover:scale-120 transition-all duration-500 "
           />
         </div>

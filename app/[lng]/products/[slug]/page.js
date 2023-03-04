@@ -5,15 +5,15 @@ import { getStrapiMedia } from "@/lib/media";
 import { Title } from "@/components/Heading";
 import MarkDown from "@/components/MarkDown";
 
-// export async function generateStaticParams() {
-//   const { data: products } = await getProducts();
+export async function generateStaticParams() {
+  const { data: products } = await getProducts();
 
-//   return products
-//     .filter((_, i) => i < 5)
-//     .map((product) => ({
-//       slug: product.attributes.slug,
-//     }));
-// }
+  return products
+    .filter((_, i) => i < 5)
+    .map((product) => ({
+      slug: product.attributes.slug,
+    }));
+}
 
 export const page = async ({ params }) => {
   const productData = await getProductBySlug(params.slug);

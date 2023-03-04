@@ -2,6 +2,10 @@ import { PrimaryHeading } from "@/components/Heading";
 import { getCategories } from "@/lib/api";
 import Link from "next/link";
 
+export const metadata = {
+  title: "Categories",
+};
+
 const layout = async ({ children, params: { lng } }) => {
   const categoryData = await getCategories();
 

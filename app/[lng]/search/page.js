@@ -4,7 +4,9 @@ import { PrimaryHeading } from "@/components/Heading";
 import { getproductSearchResult } from "@/lib/api";
 
 export const dynamic = "force-dynamic";
-
+export const metadata = {
+  title: "Search",
+};
 const page = async ({ searchParams }) => {
   const searchResults = await getproductSearchResult(searchParams.query);
 

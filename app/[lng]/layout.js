@@ -1,21 +1,35 @@
 import { dir } from "i18next";
 import { languages } from "../i18n/settings";
 import { Josefin_Sans } from "@next/font/google";
-
+import { getHomePageData } from "@/lib/api";
 const JosefinSans = Josefin_Sans({
   subsets: ["latin"],
   variable: "--font-josefin-sans",
 });
-
-export async function generateStaticParams() {
-  return languages.map((lng) => ({ lng }));
-}
 
 import SearchBar from "@/components/SearchBar";
 import "./globals.css";
 import Navigation from "@/components/Navigation";
 import { Providers } from "@/components/Providers";
 import Footer from "@/components/Footer";
+
+export async function generateStaticParams() {
+  return languages.map((lng) => ({ lng }));
+}
+
+export async function generateMetadata({ params: { lng } }) {
+  const { SEO } = await getHomePageData(lng);
+  console.log(SEO);
+  return {
+    title: {
+      default: SEO?.metaTitle ?? "Kiki and Ami",
+      template: SEO?.metaTitle ? `%s | ${SEO.metaTitle}` : "%s | Kiki and Ami",
+    },
+    description:
+      SEO?.metaDescription ??
+      "KiKi & Ami,  a company and brand for breath-taking innovative products.",
+  };
+}
 
 export default function RootLayout({ children, params: { lng } }) {
   return (

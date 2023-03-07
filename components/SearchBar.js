@@ -30,7 +30,7 @@ const SearchBar = ({ lang }) => {
                 aria-describedby="button-addon2"
               />
               <button
-                className="btn  px-6 py-2.5  bg-theme-purple-deep text-white dark:text-white  font-medium text-xs leading-tight uppercase rounded rounded-tl-none rounded-bl-none   hover:shadow-md   focus:shadow-lg focus:outline-none focus:ring-0  active:shadow-lg transition duration-150 ease-in-out flex items-center"
+                className="btn  px-6 py-2.5  bg-theme-purple-light dark:bg-theme-purple-deep text-theme-purple-deep dark:text-white  font-medium text-xs leading-tight uppercase rounded rounded-tl-none rounded-bl-none   hover:shadow-md   focus:shadow-lg focus:outline-none focus:ring-0  active:shadow-lg transition duration-150 ease-in-out flex items-center"
                 type="submit"
                 id="button-addon2"
                 disabled={!value}

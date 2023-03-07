@@ -46,7 +46,11 @@ const Footer = async ({ lang }) => {
                   {section.label}
                 </h2>
                 {section.links.map((link) => (
-                  <Link key={link.id} href={link.href}>
+                  <Link
+                    className=" hover:text-theme-purple-light transition-all duration-300 "
+                    key={link.id}
+                    href={link.href}
+                  >
                     {link.label}
                   </Link>
                 ))}

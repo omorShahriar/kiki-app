@@ -13,7 +13,7 @@ const MainMenu = ({ navElements }) => {
             <Popover className="relative" key={element.label}>
               {({ open, close }) => (
                 <>
-                  <Popover.Button className=" group inline-flex items-center  px-3 py-2   focus:outline-none  text-xl font-semibold transition-colors duration-200 hover:text-theme-purple-deep ">
+                  <Popover.Button className=" group inline-flex items-center  px-3 py-2   focus:outline-none  text-xl font-semibold transition-colors duration-200 hover:text-theme-purple-light ">
                     <span>{element.label}</span>
                   </Popover.Button>
                   <Transition
@@ -69,7 +69,7 @@ const MainMenu = ({ navElements }) => {
         return (
           <li
             key={element.label}
-            className="px-3 py-2 text-xl font-semibold transition-colors duration-200 hover:text-theme-purple-deep "
+            className="px-3 py-2 text-xl font-semibold transition-colors duration-200 hover:text-theme-purple-light "
           >
             <Link href={element.href}>{element.label}</Link>
           </li>

@@ -6,12 +6,7 @@ const MarqueeContainer = ({ children }) => {
   const { theme } = useTheme();
   const gradientColor = theme === "dark" ? [24, 24, 27] : [248, 211, 226];
   return (
-    <Marquee
-      gradientWidth={12}
-      gradientColor={gradientColor}
-      pauseOnHover
-      speed={50}
-    >
+    <Marquee gradient={false} pauseOnHover speed={50}>
       {children}
     </Marquee>
   );

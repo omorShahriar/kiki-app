@@ -24,7 +24,7 @@ const MobileMenu = ({ navElements }) => {
     <div className="pt-2 ">
       <BreadCrumb open={open} onClick={toggleButton} />
       {open && (
-        <div className=" w-full h-[calc(100vh-172.65px)] fixed z-[1000] top-[172.65px] left-0 bg-theme-purple-light dark:bg-zinc-900 overflow-y-scroll ">
+        <div className=" w-full h-[calc(100vh-172.65px)] fixed z-[1000] top-[172.65px] left-0 bg-theme-purple-deep dark:bg-zinc-900 overflow-y-scroll ">
           <Container>
             {" "}
             <div className=" pt-12 ">

@@ -19,7 +19,7 @@ export default async function Home({ params: { lng } }) {
     <>
       <Container>
         {" "}
-        <div className="px-2">
+        <div className="">
           <Slider slides={hero_slider.slides} />
         </div>
       </Container>
@@ -29,11 +29,11 @@ export default async function Home({ params: { lng } }) {
           {newsLinks.map((news) => (
             <p
               key={news.id}
-              className="px-12 border-theme-purple-deep dark:border-theme-purple-light border-t-4 border-b-4 border-r-4 py-8  md:text-6xl text-3xl font-bold  overflow-hidden"
+              className="px-12 border-theme-purple-light border-t-4 border-b-4 border-r-4 py-8  md:text-6xl text-3xl font-bold  overflow-hidden"
             >
               <Link
                 href={news.href}
-                className="hover:text-theme-purple-deep transition-colors duration-200 "
+                className="text-theme-purple-light dark:hover:text-theme-purple-deep hover:text-dark transition-colors duration-200 "
               >
                 {news.label}
               </Link>

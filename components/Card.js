@@ -21,7 +21,7 @@ const Card = ({ lang = "en", info, cardType }) => {
         <div className="overflow-hidden p-2">
           <Image
             alt={info.title}
-            src={imageUrl}
+            src={imageUrl ?? "/placeholder.jpg"}
             width={400}
             height={250}
             className=" w-full h-60  object-cover object-center hover:scale-120 transition-all duration-500 "

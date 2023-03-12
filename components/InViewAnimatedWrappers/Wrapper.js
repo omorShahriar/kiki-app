@@ -1,6 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
-import { InView } from "react-intersection-observer";
+
 import {
   blockFadeInRight,
   blockFadeInTop,
@@ -12,127 +12,78 @@ import {
 
 export const FadeInWrapper = ({ children }) => {
   return (
-    <InView threshold={0.5} triggerOnce>
-      {({ ref, inView }) => {
-        return (
-          <>
-            <motion.div
-              ref={ref}
-              variants={blockFadeIn}
-              initial="hidden"
-              animate={inView ? "visible" : "hidden"}
-              className=""
-            >
-              {children}
-            </motion.div>
-          </>
-        );
-      }}
-    </InView>
+    <motion.div
+      variants={blockFadeIn}
+      initial="hidden"
+      whileInView="visible"
+      className=""
+    >
+      {children}
+    </motion.div>
   );
 };
 export const GridFadeInWrapper = ({ children }) => {
   return (
-    <InView threshold={0.5} triggerOnce>
-      {({ ref, inView }) => {
-        return (
-          <>
-            <motion.div
-              ref={ref}
-              variants={gridVariants}
-              initial="hidden"
-              animate={inView ? "visible" : "hidden"}
-              className="grid grid-cols-12 md:gap-16 gap-8"
-            >
-              {children}
-            </motion.div>
-          </>
-        );
-      }}
-    </InView>
+    <motion.div
+      variants={gridVariants}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true }}
+      className="grid grid-cols-12 md:gap-16 gap-8"
+    >
+      {children}
+    </motion.div>
   );
 };
 export const GridElementWrapper = ({ children }) => {
   return (
-    <InView threshold={0.5} triggerOnce>
-      {({ ref, inView }) => {
-        return (
-          <>
-            <motion.div
-              ref={ref}
-              variants={gridElementVariants}
-              initial="hidden"
-              animate={inView ? "visible" : "hidden"}
-              className="col-span-12 md:col-span-3"
-            >
-              {children}
-            </motion.div>
-          </>
-        );
-      }}
-    </InView>
+    <motion.div
+      variants={gridElementVariants}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true }}
+      className="col-span-12 md:col-span-3"
+    >
+      {children}
+    </motion.div>
   );
 };
 export const FadeInRightWrapper = ({ children }) => {
   return (
-    <InView threshold={0.5} triggerOnce>
-      {({ ref, inView }) => {
-        return (
-          <>
-            <motion.div
-              ref={ref}
-              variants={blockFadeInRight}
-              initial="hidden"
-              animate={inView ? "visible" : "hidden"}
-              className=""
-            >
-              {children}
-            </motion.div>
-          </>
-        );
-      }}
-    </InView>
+    <motion.div
+      variants={blockFadeInRight}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true }}
+      className=""
+    >
+      {children}
+    </motion.div>
   );
 };
 export const FadeInTopWrapper = ({ children }) => {
   return (
-    <InView threshold={0.5} triggerOnce>
-      {({ ref, inView }) => {
-        return (
-          <>
-            <motion.div
-              ref={ref}
-              variants={blockFadeInTop}
-              initial="hidden"
-              animate={inView ? "visible" : "hidden"}
-              className=""
-            >
-              {children}
-            </motion.div>
-          </>
-        );
-      }}
-    </InView>
+    <motion.div
+      variants={blockFadeInTop}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true }}
+      className=""
+    >
+      {children}
+    </motion.div>
   );
 };
 export const FadeInLeftWrapper = ({ children }) => {
   return (
-    <InView threshold={0.5} triggerOnce>
-      {({ ref, inView }) => {
-        return (
-          <>
-            <motion.div
-              ref={ref}
-              variants={blockFadeInLeft}
-              initial="hidden"
-              animate={inView ? "visible" : "hidden"}
-              className=""
-            >
-              {children}
-            </motion.div>
-          </>
-        );
-      }}
-    </InView>
+    <motion.div
+      variants={blockFadeInLeft}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true }}
+      className=""
+    >
+      {children}
+    </motion.div>
   );
 };

@@ -1,4 +1,5 @@
-import { getNavigationData } from "@/lib/api";
+import { getNavigationData, getSiteInfo } from "@/lib/api";
+import { getStrapiMedia } from "@/lib/media";
 import MainMenu from "@/components/MainMenu";
 import Container from "@/components/Container";
 import ThemeToggle from "@/components/ThemeToggle";
@@ -10,6 +11,7 @@ import Link from "next/link";
 
 const Navigation = async ({ lang }) => {
   const navElementsData = await getNavigationData(lang);
+  const { logo } = await getSiteInfo(lang);
 
   return (
     <div className="py-4   ">
@@ -19,7 +21,7 @@ const Navigation = async ({ lang }) => {
             <Link href="/">
               {" "}
               <Image
-                src="/logo.png"
+                src={`${getStrapiMedia(logo).imageUrl ?? "/logo.png"}`}
                 width={100}
                 height={60}
                 alt="kiki and ami logo"

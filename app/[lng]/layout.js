@@ -1,7 +1,7 @@
 import { dir } from "i18next";
 import { languages } from "../i18n/settings";
 import { Josefin_Sans } from "next/font/google";
-import { getHomePageData } from "@/lib/api";
+import { getHomePageData, getSiteInfo } from "@/lib/api";
 const JosefinSans = Josefin_Sans({
   subsets: ["latin"],
   variable: "--font-josefin-sans",
@@ -31,13 +31,15 @@ export async function generateMetadata({ params: { lng } }) {
   };
 }
 
-export default function RootLayout({ children, params: { lng } }) {
+export default async function RootLayout({ children, params: { lng } }) {
+  const { themeColor } = await getSiteInfo(lng);
+
   return (
     <html lang={lng} dir={dir(lng)}>
       <head />
 
       <body className={`${JosefinSans.variable} font-sans`}>
-        <Providers>
+        <Providers themeColor={themeColor}>
           <header className="bg-theme-purple-deep dark:bg-zinc-900 sticky top-0 z-50 border-b-2 border-theme-blue-deep dark:border-b-zinc-700">
             <Navigation lang={lng} />
             <SearchBar lang={lng} />

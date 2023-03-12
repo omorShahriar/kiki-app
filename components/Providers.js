@@ -2,10 +2,12 @@
 
 import { ThemeProvider } from "next-themes";
 
-export function Providers({ children, themeColor }) {
+export function Providers({ children }) {
   return (
     <ThemeProvider attribute="class" enableSystem={true}>
-      {children}
+      <div className="bg-theme-purple-deep dark:bg-zinc-900 transition-colors duration-200">
+        {children}
+      </div>
     </ThemeProvider>
   );
 }

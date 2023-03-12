@@ -7,7 +7,7 @@ import MarkDown from "@/components/MarkDown";
 import { FadeInTopWrapper } from "@/components/InViewAnimatedWrappers/Wrapper";
 
 export async function generateStaticParams() {
-  const { data: articles } = await getArticles();
+  const { data: articles } = await getArticles({ pageSize: 5 });
 
   return articles.map((article) => ({
     slug: article.attributes.slug,
@@ -26,7 +26,7 @@ export const page = async ({ params }) => {
           <div className="flex items-center justify-center my-12  ">
             {" "}
             <Image
-              src={imageUrl}
+              src={imageUrl ?? "/placeholder.jpg"}
               width={1000}
               height={400}
               alt={articleData?.title}

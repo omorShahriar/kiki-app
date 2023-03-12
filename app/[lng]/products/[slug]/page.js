@@ -6,13 +6,11 @@ import { Title } from "@/components/Heading";
 import MarkDown from "@/components/MarkDown";
 
 export async function generateStaticParams() {
-  const { data: products } = await getProducts();
+  const { data: products } = await getProducts({ pageSize: 5 });
 
-  return products
-    .filter((_, i) => i < 5)
-    .map((product) => ({
-      slug: product.attributes.slug,
-    }));
+  return products.map((product) => ({
+    slug: product.attributes.slug,
+  }));
 }
 
 export const page = async ({ params }) => {
@@ -25,7 +23,7 @@ export const page = async ({ params }) => {
         <div className="flex items-center justify-between my-12  ">
           {" "}
           <Image
-            src={imageUrl}
+            src={imageUrl ?? "/placeholder.jpg"}
             width={1000}
             height={400}
             alt={productData.title}

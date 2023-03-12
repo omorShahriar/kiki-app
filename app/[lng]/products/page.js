@@ -1,3 +1,4 @@
+import { useTranslation } from "@/app/i18n";
 import Container from "@/components/Container";
 import Header from "@/components/Header";
 import Products from "@/components/ProductRelated/Products";
@@ -8,10 +9,11 @@ export const metadata = {
 };
 const page = async ({ params: { lng } }) => {
   const products = await getProducts({ page: 1 });
-
+  // eslint-disable-next-line react-hooks/rules-of-hooks
+  const { t } = await useTranslation(lng);
   return (
     <Container>
-      <Header>Products </Header>
+      <Header>{t("products")} </Header>
 
       <Products products={products} lang={lng} />
     </Container>

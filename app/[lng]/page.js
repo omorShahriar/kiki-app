@@ -42,14 +42,14 @@ export default async function Home({ params: { lng } }) {
         </MarqueeContainer>
       </section>
       <Container>
-        <section className="my-20">
+        <section className="py-20">
           <PrimaryHeading>{t("recent-articles")}</PrimaryHeading>{" "}
           <RecentArticles lang={lng} />
           <div className="mt-12 flex justify-end  ">
             <ViewAll lang={lng} page="articles" />
           </div>
         </section>
-        <section className="my-20">
+        <section className="py-20">
           <PrimaryHeading>{t("recent-products")}</PrimaryHeading>
           <RecentProducts lang={lng} />
           <div className="mt-12 flex justify-end">

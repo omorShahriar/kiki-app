@@ -9,6 +9,7 @@ import {
 import { getFooterData } from "@/lib/api";
 import Link from "next/link";
 import Container from "./Container";
+import FooterShell from "./shell/FooterShell";
 
 const generateSocialIcon = (platform, className) => {
   if (platform == "facebook") {
@@ -28,12 +29,12 @@ const generateSocialIcon = (platform, className) => {
   }
 };
 
-const Footer = async ({ lang }) => {
+const Footer = async ({ lang, themeColor }) => {
   const { t } = await useTranslation(lang, "footer");
   const footerData = await getFooterData(lang);
 
   return (
-    <footer className=" font-sans border-t-2 border-t-theme-blue-deep dark:border-t-zinc-700 py-8 ">
+    <FooterShell themeColor={themeColor}>
       <Container>
         <div className="flex gap-8 md:gap-16 flex-col md:flex-row justify-between items-center">
           <div className="flex gap-8 md:gap-16 flex-col md:flex-row text-center md:text-right">
@@ -82,7 +83,7 @@ const Footer = async ({ lang }) => {
           </p>
         </div>
       </Container>
-    </footer>
+    </FooterShell>
   );
 };
 

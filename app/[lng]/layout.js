@@ -12,6 +12,8 @@ import "./globals.css";
 import Navigation from "@/components/Navigation";
 import { Providers } from "@/components/Providers";
 import Footer from "@/components/Footer";
+import NavHeader from "@/components/shell/NavHeader";
+import Main from "@/components/shell/Main";
 
 export async function generateStaticParams() {
   return languages.map((lng) => ({ lng }));
@@ -39,14 +41,14 @@ export default async function RootLayout({ children, params: { lng } }) {
       <head />
 
       <body className={`${JosefinSans.variable} font-sans`}>
-        <Providers themeColor={themeColor}>
-          <header className="bg-theme-purple-deep dark:bg-zinc-900 sticky top-0 z-50 border-b-2 border-theme-blue-deep dark:border-b-zinc-700">
+        <Providers>
+          <NavHeader themeColor={themeColor}>
             <Navigation lang={lng} />
             <SearchBar lang={lng} />
-          </header>
-          <main className=""> {children}</main>
+          </NavHeader>
+          <Main themeColor={themeColor}> {children}</Main>
 
-          <Footer lang={lng} />
+          <Footer lang={lng} themeColor={themeColor} />
         </Providers>
       </body>
     </html>

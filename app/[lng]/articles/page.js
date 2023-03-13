@@ -9,7 +9,7 @@ export const metadata = {
 };
 
 const page = async ({ params: { lng } }) => {
-  const articles = await getArticles({ page: 1 });
+  const articles = await getArticles({ page: 1, locale: lng });
   // eslint-disable-next-line react-hooks/rules-of-hooks
   const { t } = await useTranslation(lng);
   return (

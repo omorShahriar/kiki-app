@@ -14,7 +14,7 @@ const Products = ({ products, lang }) => {
   const decreasePageIndex = () => setPageIndex((p) => p - 1);
   const increasePageIndex = () => setPageIndex((p) => p + 1);
   const { data, isLoading } = useSWR(
-    `${process.env.NEXT_PUBLIC_STRAPI_API_URL}/api/products?pagination[page]=${pageIndex}&pagination[pageSize]=8&populate[0]=media&populate[1]=category`,
+    `${process.env.NEXT_PUBLIC_STRAPI_API_URL}/api/products?pagination[page]=${pageIndex}&pagination[pageSize]=8&populate[0]=media&populate[1]=category&locale=${lang}`,
     fetcher,
     {
       fallbackData: products,

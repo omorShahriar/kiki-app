@@ -15,7 +15,7 @@ export async function generateStaticParams() {
 }
 
 export const page = async ({ params }) => {
-  const articleData = await getArticleBySlug(params.slug);
+  const articleData = await getArticleBySlug(params.lng, params.slug);
   const { imageUrl } = getStrapiMedia(articleData?.media);
   return (
     <div className="mb-12">

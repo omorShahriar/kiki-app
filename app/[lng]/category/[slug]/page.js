@@ -12,7 +12,7 @@ export async function generateStaticParams() {
 }
 
 const page = async ({ params }) => {
-  const categoryData = await getCategoryBySlug(params.slug);
+  const categoryData = await getCategoryBySlug(params.lng, params.slug);
 
   return (
     <div>

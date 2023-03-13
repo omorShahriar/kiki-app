@@ -1,11 +1,10 @@
-import { use } from "react";
 import { getRecentArticles } from "@/lib/api";
 
 import CardSlider from "../sliders/CardSlider";
 import { FadeInTopWrapper } from "../InViewAnimatedWrappers/Wrapper";
 
-const RecentArticles = ({ lang }) => {
-  const { data: articles } = use(getRecentArticles());
+const RecentArticles = async ({ lang }) => {
+  const { data: articles } = await getRecentArticles(lang);
 
   return (
     <FadeInTopWrapper>

@@ -37,7 +37,7 @@ const Footer = async ({ lang }) => {
       <Container>
         <div className="flex gap-8 md:gap-16 flex-col md:flex-row justify-between items-center">
           <div className="flex gap-8 md:gap-16 flex-col md:flex-row text-center md:text-right">
-            {footerData.sections.map((section) => (
+            {footerData?.sections.map((section) => (
               <div
                 key={section.id}
                 className="flex flex-col md:gap-y-4 gap-y-2"
@@ -58,7 +58,7 @@ const Footer = async ({ lang }) => {
             ))}
           </div>
           <div className="flex gap-8 ">
-            {footerData.socialLinks.map((socialLink) => (
+            {footerData?.socialLinks.map((socialLink) => (
               <a
                 key={socialLink.id}
                 href={socialLink.url}

@@ -18,15 +18,17 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params: { lng } }) {
-  const { SEO } = await getHomePageData(lng);
+  const data = await getHomePageData(lng);
 
   return {
     title: {
-      default: SEO?.metaTitle ?? "Kiki and Ami",
-      template: SEO?.metaTitle ? `%s | ${SEO.metaTitle}` : "%s | Kiki and Ami",
+      default: data?.SEO?.metaTitle ?? "Kiki and Ami",
+      template: data?.SEO?.metaTitle
+        ? `%s | ${data.SEO.metaTitle}`
+        : "%s | Kiki and Ami",
     },
     description:
-      SEO?.metaDescription ??
+      data?.SEO?.metaDescription ??
       "KiKi & Ami,  a company and brand for breath-taking innovative products.",
   };
 }
